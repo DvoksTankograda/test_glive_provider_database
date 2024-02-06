@@ -1,16 +1,28 @@
 # test_glive_provider_database
 
-A new Flutter project.
+Test task in which I fix the application and try to implement the database
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Develop the “GLive - Depth Maps” application on minimal settings: implement the display of a standard map and points on it, as well as implement the functions of adding/deleting and displaying points.
 
-A few resources to get you started if this is your first Flutter project:
+The application consists of three screens:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Login screen
+Map screen
+Screen with list of points
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Login screen:
+Fields for entering login and password and the “login” button. The application checks that root/root has been entered and takes you to the screen with the map. If it doesn’t match, it writes an error.
+
+Map screen:
+Map showing your current location and added points
+There is a “add point” button on the screen: adds a point called “point N” at the point where the center of the screen is facing
+There is a button on the map “open list of points”: opens a screen with a list of added points
+
+Point list screen:
+A list where each element has:
+Point name
+Coordinates
+“Delete point” button
+There is a “Back” button on the screen, which takes you to the map
