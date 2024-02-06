@@ -6,7 +6,6 @@ import 'package:test_glive_provider_database/style_app.dart';
 
 class FormWidget extends StatelessWidget {
   FormWidget({super.key});
-
   final loginTextController = TextEditingController();
   final passwordTextController = TextEditingController();
   String? errorText;
@@ -74,7 +73,7 @@ class FormWidget extends StatelessWidget {
               padding: EdgeInsets.only(right: 10, top: 70),
             ),
             TextButton.icon(
-              onPressed: () => enter,
+              onPressed:() => enter(context),
               style: StylesApp.blueButton,
               label: const Text('Enter/Войти'),
               icon: const Icon(Icons.account_box_outlined),

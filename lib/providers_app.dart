@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart'; // не могу найти решение данной ошибки
 import 'package:flutter_map/flutter_map.dart';
 
-import 'Pages/map_page.dart';
+
 
 
 
