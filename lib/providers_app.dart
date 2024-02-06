@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart'; // не могу найти решение данной ошибки
 import 'package:flutter_map/flutter_map.dart';
 
@@ -11,6 +12,13 @@ class ProvidersModelOneMap extends ChangeNotifier {
   final mapController = MapController();
   List<LatLng> points = [];
   List<Marker> markers = [];
+  LatLng? currentPos;
+
+  getCurrentPos() async{
+    final position = await Geolocator.getCurrentPosition();
+    currentPos = LatLng(position.latitude, position.longitude);
+    notifyListeners();
+  }
 
   void retPositionMap(LatLng coordinate) {
     points.add(LatLng(coordinate.latitude, coordinate.longitude));

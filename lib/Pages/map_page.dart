@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:provider/provider.dart';
 import 'package:test_glive_provider_database/Pages/list_points_page.dart';
@@ -14,6 +13,7 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<ProvidersModelOneMap>();
+    provider.getCurrentPos();
 
     return Scaffold(
       appBar: AppBar(
@@ -23,7 +23,7 @@ class MapPage extends StatelessWidget {
       body: FlutterMap(
         mapController: provider.mapController,
         options: MapOptions(
-          center: LatLng(56.8519, 60.6122), //надо изменить чтобы через геолокацию находил и к точкестояния привязывался
+          center: provider.currentPos,
           zoom: 12,
           onTap:(position, latLng) => provider.retPositionMap(latLng),
         ),
