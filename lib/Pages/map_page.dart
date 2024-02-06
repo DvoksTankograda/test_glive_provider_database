@@ -42,7 +42,7 @@ class MapPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
-        onPressed: () {
+        onPressed:() {
           Navigator.push(context, MaterialPageRoute(builder: (context) => const ListPoints(),
           ));
         },

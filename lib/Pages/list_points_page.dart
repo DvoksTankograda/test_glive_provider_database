@@ -16,7 +16,7 @@ class ListPoints extends StatelessWidget {
       appBar: AppBar(
         title: const Text('List Points'),
         centerTitle: true,),
-      body: ListView.builder (
+      body: ListView.builder(
         itemCount: listPoints.length,
         itemBuilder:(BuildContext context , index) {
           return Dismissible(

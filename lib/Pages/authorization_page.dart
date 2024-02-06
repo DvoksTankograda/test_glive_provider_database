@@ -16,12 +16,12 @@ class AuthorizationPage extends StatelessWidget {
           ),
           body: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
-            children: [
-              const Padding(
+            children: const [
+              Padding(
                 padding: EdgeInsets.only(top: 10),
               ),
               FormWidget(),
-              const Text(
+              Text(
                 'Введите логин и пароль, если у Вас нет аккаунта зарегистрируйтесь! Login: admin, Password: admin',
               ),
             ],

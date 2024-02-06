@@ -9,6 +9,7 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => ProvidersModelOneMap()),
+      ChangeNotifierProvider(create: (context) => ProviderModelTwoAuth()),
     ],
     child: const MyApp(),
   ),);
