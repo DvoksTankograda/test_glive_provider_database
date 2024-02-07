@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:test_glive_provider_database/pages/authorization_screen/controller_auth.dart';
+import 'package:test_glive_provider_database/pages/map_screen/controller_map.dart';
 import 'Pages/authorization_page.dart';
 import 'package:provider/provider.dart';
-import 'ProvidersApp/providers_app.dart';
+
 
 
 
 void main() {
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (context) => ProvidersModelOneMap()),
-      ChangeNotifierProvider(create: (context) => ProviderModelTwoAuth()),
+      ChangeNotifierProvider(create: (context) => ControllerMapScreen()),
+      ChangeNotifierProvider(create: (context) => ControllerAuth()),
     ],
     child: const MyApp(),
   ),);

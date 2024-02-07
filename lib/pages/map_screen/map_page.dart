@@ -3,7 +3,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:provider/provider.dart';
 import 'package:test_glive_provider_database/Pages/list_points_page.dart';
-import 'package:test_glive_provider_database/ProvidersApp/providers_app.dart';
+import 'package:test_glive_provider_database/pages/map_screen/controller_map.dart';
 
 
 
@@ -12,7 +12,7 @@ class MapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = context.watch<ProvidersModelOneMap>();
+    final provider = context.watch<ControllerMapScreen>();
     provider.getCurrentPos();
 
     return Scaffold(

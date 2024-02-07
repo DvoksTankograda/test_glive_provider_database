@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../ProvidersApp/providers_app.dart';
+import 'package:test_glive_provider_database/pages/map_screen/controller_map.dart';
+
 
 class ListPoints extends StatelessWidget {
   const ListPoints({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final provider = context.watch<ProvidersModelOneMap>();
+    final provider = context.watch<ControllerMapScreen>();
     final listPoints = provider.points;
 
     return Scaffold(
