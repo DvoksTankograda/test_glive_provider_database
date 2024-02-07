@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Pages/authorization_page.dart';
 import 'package:provider/provider.dart';
-import 'providers_app.dart';
+import 'ProvidersApp/providers_app.dart';
 
 
 

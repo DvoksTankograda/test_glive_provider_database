@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers_app.dart';
-import 'package:latlong2/latlong.dart';
+import '../ProvidersApp/providers_app.dart';
 
 class ListPoints extends StatelessWidget {
   const ListPoints({super.key});
@@ -15,31 +14,26 @@ class ListPoints extends StatelessWidget {
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: const Text('List Points'),
-        centerTitle: true,),
+        centerTitle: true,
+      ),
       body: ListView.builder(
-        itemCount: listPoints.length,
-        itemBuilder:(BuildContext context , index) {
-          return Dismissible(
-            key: ValueKey<LatLng>(listPoints[index]),
-            child: Card(
-              child: ListTile(title: Text(listPoints[index].toString()),
+          itemCount: listPoints.length,
+          itemBuilder: (BuildContext context, index) {
+            return Card(
+              child: ListTile(
+                title: Text(listPoints[index].toString()),
                 trailing: IconButton(
                   icon: const Icon(
                     Icons.delete_sweep_outlined,
                     color: Colors.red,
                   ),
-                  onPressed:() {
+                  onPressed: () {
                     provider.deletePoint(index);
                   },
                 ),
               ),
-            ),
-            onDismissed:(direction) {
-              provider.deletePoint(index);
-            },
-          );
-        },
-      ),
+            );
+          }),
     );
   }
 }

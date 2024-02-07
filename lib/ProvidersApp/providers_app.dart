@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart'; // не могу найти решение данной ошибки
 import 'package:flutter_map/flutter_map.dart';
-import 'Pages/map_page.dart';
+import '../Pages/map_page.dart';
 
 
 
@@ -16,7 +16,8 @@ class ProvidersModelOneMap extends ChangeNotifier {
   LatLng? currentPos;
 
   getCurrentPos() async{
-    final position = await Geolocator.getCurrentPosition();
+    final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high, timeLimit: const Duration(seconds: 1));
     currentPos = LatLng(position.latitude, position.longitude);
     notifyListeners();
   }
@@ -25,7 +26,7 @@ class ProvidersModelOneMap extends ChangeNotifier {
     points.add(LatLng(coordinate.latitude, coordinate.longitude));
     markers.add(Marker(
         point: LatLng(coordinate.latitude, coordinate.longitude),
-        builder: (context) =>
+        builder:(context) =>
         const Icon(
           Icons.accessibility_new_outlined,
         )));
@@ -64,7 +65,6 @@ class ProviderModelTwoAuth extends ChangeNotifier {
       notifyListeners();
     } else {
       errorText = false;
-      // errorText = 'Не верный логин или пароль';
       notifyListeners();
     }
   }

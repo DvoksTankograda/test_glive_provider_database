@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:test_glive_provider_database/Pages/map_page.dart';
-import 'package:test_glive_provider_database/providers_app.dart';
-import 'package:test_glive_provider_database/style_app.dart';
+import 'package:test_glive_provider_database/ProvidersApp/providers_app.dart';
+import 'package:test_glive_provider_database/StylesApp/style_app.dart';
 
 
 class FormWidget extends StatelessWidget {
   const FormWidget({super.key});
-
 
   @override
   Widget build(BuildContext context) {
