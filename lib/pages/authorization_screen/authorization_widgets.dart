@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_glive_provider_database/StylesApp/style_app.dart';
 import 'package:test_glive_provider_database/pages/authorization_screen/controller_auth.dart';
+import 'package:test_glive_provider_database/styles_app/style_app.dart';
 
 class FormWidget extends StatelessWidget {
   const FormWidget({super.key});
@@ -9,18 +9,18 @@ class FormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<ControllerAuth>();
-    final isError = provider.errorText;
+    final isError = provider.errorBool;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10, bottom: 10),
           child: Visibility(
             visible: isError == false,
             child: const Text('Не верный логин или пароль',
                 style: TextStyle(color: Colors.red)),
-          ),
+          )
         ),
         const Text(
           'Username/Логин',

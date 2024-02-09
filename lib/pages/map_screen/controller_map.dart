@@ -2,6 +2,9 @@ import 'package:latlong2/latlong.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geolocator/geolocator.dart';
+// import 'package:objectbox/objectbox.dart';
+
+
 
 class ControllerMapScreen extends ChangeNotifier {
   final mapController = MapController();
@@ -9,9 +12,11 @@ class ControllerMapScreen extends ChangeNotifier {
   List<Marker> markers = [];
   LatLng? currentPos;
 
-  void getCurrentPos() async{
+
+  void getCurrentPos() async {
     final position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high, timeLimit: const Duration(seconds: 1));
+        desiredAccuracy: LocationAccuracy.high,
+        timeLimit: const Duration(seconds: 1));
     currentPos = LatLng(position.latitude, position.longitude);
     notifyListeners();
   }
@@ -20,10 +25,9 @@ class ControllerMapScreen extends ChangeNotifier {
     points.add(LatLng(coordinate.latitude, coordinate.longitude));
     markers.add(Marker(
         point: LatLng(coordinate.latitude, coordinate.longitude),
-        builder:(context) =>
-        const Icon(
-          Icons.accessibility_new_outlined,
-        )));
+        builder: (context) => const Icon(
+              Icons.add_circle_outline,
+            )));
     notifyListeners();
   }
 
@@ -32,6 +36,14 @@ class ControllerMapScreen extends ChangeNotifier {
     markers.removeAt(index);
     notifyListeners();
   }
+
+  void clearList() {
+    points.clear();
+    markers.clear();
+    notifyListeners();
+  }
+
+
 
   @override
   void dispose() {

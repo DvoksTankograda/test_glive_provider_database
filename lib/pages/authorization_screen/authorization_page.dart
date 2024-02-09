@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_glive_provider_database/Pages/Widgets/authorization_widgets.dart';
+import 'package:test_glive_provider_database/pages/authorization_screen/authorization_widgets.dart';
 
 
 class AuthorizationPage extends StatelessWidget {

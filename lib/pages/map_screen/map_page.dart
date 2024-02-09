@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:provider/provider.dart';
-import 'package:test_glive_provider_database/Pages/list_points_page.dart';
 import 'package:test_glive_provider_database/pages/map_screen/controller_map.dart';
-
-
+import 'package:test_glive_provider_database/pages/map_screen/map_widgets.dart';
 
 class MapPage extends StatelessWidget {
   const MapPage({super.key});
@@ -16,16 +14,18 @@ class MapPage extends StatelessWidget {
     provider.getCurrentPos();
 
     return Scaffold(
+      drawer: const MenuList(),
       appBar: AppBar(
         title: const Text('Map screen'),
         centerTitle: true,
+
       ),
       body: FlutterMap(
         mapController: provider.mapController,
         options: MapOptions(
           center: provider.currentPos,
           zoom: 12,
-          onTap:(position, latLng) => provider.retPositionMap(latLng),
+          onTap: (position, latLng) => provider.retPositionMap(latLng),
         ),
         children: [
           TileLayer(
@@ -40,14 +40,12 @@ class MapPage extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
-        onPressed:() {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const ListPoints(),
-          ));
-        },
-        child: const Icon(Icons.list_alt_outlined),
+      floatingActionButton: const Padding(
+        padding: EdgeInsets.only(left: 20),
+        child: ListWidget(),
       ),
     );
   }
 }
+
+

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_glive_provider_database/pages/authorization_screen/authorization_page.dart';
 import 'package:test_glive_provider_database/pages/authorization_screen/controller_auth.dart';
 import 'package:test_glive_provider_database/pages/map_screen/controller_map.dart';
-import 'Pages/authorization_page.dart';
 import 'package:provider/provider.dart';
-
-
 
 
 void main() {

@@ -12,10 +12,15 @@ class ListPoints extends StatelessWidget {
     final listPoints = provider.points;
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white60,
       appBar: AppBar(
         title: const Text('List Points'),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () => provider.clearList(),
+              icon: const Icon(Icons.delete_sweep))
+        ],
       ),
       body: ListView.builder(
           itemCount: listPoints.length,
@@ -28,9 +33,7 @@ class ListPoints extends StatelessWidget {
                     Icons.delete_sweep_outlined,
                     color: Colors.red,
                   ),
-                  onPressed: () {
-                    provider.deletePoint(index);
-                  },
+                  onPressed: () => provider.deletePoint(index),
                 ),
               ),
             );
