@@ -18,14 +18,13 @@ class MapPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Map screen'),
         centerTitle: true,
-
       ),
       body: FlutterMap(
         mapController: provider.mapController,
         options: MapOptions(
           center: provider.currentPos,
           zoom: 12,
-          onTap: (position, latLng) => provider.retPositionMap(latLng),
+          onTap: (position, latLng) => provider.retPositionMap(position, latLng),
         ),
         children: [
           TileLayer(
@@ -47,5 +46,3 @@ class MapPage extends StatelessWidget {
     );
   }
 }
-
-

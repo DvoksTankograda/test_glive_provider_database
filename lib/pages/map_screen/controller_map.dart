@@ -21,7 +21,7 @@ class ControllerMapScreen extends ChangeNotifier {
     notifyListeners();
   }
 
-  void retPositionMap(LatLng coordinate) {
+  void retPositionMap(position, LatLng coordinate) {
     points.add(LatLng(coordinate.latitude, coordinate.longitude));
     markers.add(Marker(
         point: LatLng(coordinate.latitude, coordinate.longitude),
